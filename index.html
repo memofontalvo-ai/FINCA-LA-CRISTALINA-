@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover"/>
+<title>Finca La Cristalina 🥚</title>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="La Cristalina"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="theme-color" content="#7a4f1e"/>
+<meta name="description" content="Finca La Cristalina - Control de Huevos"/>
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%0A%20%20%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2280%22%20fill%3D%22%237a4f1e%22/%3E%0A%20%20%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2280%22%20fill%3D%22url%28%23grad%29%22/%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22grad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20style%3D%22stop-color%3A%239a6225%3Bstop-opacity%3A1%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20style%3D%22stop-color%3A%235a3510%3Bstop-opacity%3A1%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3C%21--%20Egg%20--%3E%0A%20%20%3Cellipse%20cx%3D%22256%22%20cy%3D%22230%22%20rx%3D%2295%22%20ry%3D%22115%22%20fill%3D%22%23fff%22%20opacity%3D%220.95%22/%3E%0A%20%20%3C%21--%20Small%20eggs%20--%3E%0A%20%20%3Cellipse%20cx%3D%22155%22%20cy%3D%22310%22%20rx%3D%2245%22%20ry%3D%2255%22%20fill%3D%22%23fff%22%20opacity%3D%220.6%22/%3E%0A%20%20%3Cellipse%20cx%3D%22357%22%20cy%3D%22310%22%20rx%3D%2245%22%20ry%3D%2255%22%20fill%3D%22%23fff%22%20opacity%3D%220.6%22/%3E%0A%20%20%3C%21--%20Ground%20line%20--%3E%0A%20%20%3Crect%20x%3D%2280%22%20y%3D%22370%22%20width%3D%22352%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23c17d3c%22%20opacity%3D%220.8%22/%3E%0A%20%20%3C%21--%20Text%3A%20FC%20--%3E%0A%20%20%3Ctext%20x%3D%22256%22%20y%3D%22460%22%20font-family%3D%22Georgia%2Cserif%22%20font-size%3D%2252%22%20font-weight%3D%22bold%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%20opacity%3D%220.9%22%3ELa%20Cristalina%3C/text%3E%0A%3C/svg%3E"/>
+<link rel="manifest" href="data:application/json,%7B%22name%22%3A%22Control%20de%20Huevos%22%2C%22short_name%22%3A%22Huevos%20Finca%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23fdf6ec%22%2C%22theme_color%22%3A%22%237a4f1e%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage%2Fsvg%2Bxml%2C%253Csvg%2520xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%2520viewBox%3D'0%25200%2520100%2520100'%253E%253Crect%2520width%3D'100'%2520height%3D'100'%2520rx%3D'20'%2520fill%3D'%25237a4f1e'%2F%253E%253Ctext%2520y%3D'.9em'%2520font-size%3D'75'%2520x%3D'10'%253E%25F0%259F%25A5%259A%253C%2Ftext%253E%253C%2Fsvg%253E%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fsvg%2Bxml%22%7D%5D%7D"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;touch-action:manipulation}
+body{font-family:Georgia,serif;background:#fdf6ec;-webkit-tap-highlight-color:transparent;touch-action:manipulation;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+input,select,textarea,button{font-size:16px!important;touch-action:manipulation}
+input[type=number]{-moz-appearance:textfield}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none}
+#root{max-width:480px;margin:0 auto;min-height:100vh}
+button{cursor:pointer;-webkit-user-select:none;user-select:none}
+</style>
+</head>
+<body>
+<div id="root"><div style="display:flex;align-items:center;justify-content:center;height:100vh;font-size:20px;color:#7a4f1e">🥚 Cargando...</div></div>
+<script type="module">
+// Prevenir zoom por doble toque en iOS
+(function(){
+  var lastTap=0;
+  document.addEventListener('touchend',function(e){
+    var now=Date.now();
+    if(now-lastTap<350&&e.target.tagName!=='INPUT'){e.preventDefault();}
+    lastTap=now;
+  },{passive:false});
+})();
+// ── FIREBASE ────────────────────────────────────────
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import{getFirestore,doc,onSnapshot,setDoc}from"https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+const _app=initializeApp({apiKey:"AIzaSyC4Sjp3bvyKZwkC4B_F1jDDvCZykhiDusI",authDomain:"finca---huevos.firebaseapp.com",projectId:"finca---huevos",storageBucket:"finca---huevos.firebasestorage.app",messagingSenderId:"685097307783",appId:"1:685097307783:web:77fc9e5e1353ea7262b222"});
+const _db=getFirestore(_app);
+const _REF=doc(_db,"finca","estado");
+var _fbOk=false;
+
+// ── CONSTANTES ──────────────────────────────────────
+var CPK = 30;
+var GALPONES = [
+  {id:1,n:"Galpón 1",g:180,c:"#e8a045",e:"🐔"},
+  {id:2,n:"Galpón 2",g:170,c:"#5a9e6f",e:"🐓"},
+  {id:3,n:"Galpón 3",g:185,c:"#7b6fa0",e:"🐣"}
+];
+var CATS = ["B","A","AA","AAA","Jumbo","Partidos"];
+var CATS_VENTA = ["B","A","AA","AAA","Jumbo"];
+var CC = {B:"#8d6e63",A:"#e8a045",AA:"#5a9e6f",AAA:"#7b6fa0",Jumbo:"#2196f3",Partidos:"#e74c3c"};
+var CE = {B:"🟤",A:"🟡",AA:"🟢",AAA:"🟣",Jumbo:"🔵",Partidos:"💔"};
+var PINS = {granjero:"1234",admin:"9999"};
+var MAX_ANAQ = 10;
+
+// ── HELPERS ─────────────────────────────────────────
+function hoy(){return new Date().toISOString().split("T")[0];}
+function fmtFecha(f){var p=f.split("-");return p[2]+"/"+p[1]+"/"+p[0];}
+function fmtCanastas(n){var can=Math.floor(n/CPK);var sue=n%CPK;if(can>0&&sue>0)return can+" canasta"+(can>1?"s":"")+" + "+sue+" sueltos";if(can>0)return can+" canasta"+(can>1?"s":"");if(sue>0)return sue+" sueltos";return "0";}
+function tgalpon(d,id){if(!d||!d[id])return 0;return (d[id].canastas||0)*CPK+(d[id].sueltos||0);}
+function tturno(d){if(!d)return 0;var t=0;for(var i=0;i<GALPONES.length;i++)t+=tgalpon(d,GALPONES[i].id);return t;}
+function tdia(fecha){var d=STATE.recolectas[fecha]||{};return tturno(d.manana)+tturno(d.tarde);}
+function tinv(){var t=0;for(var i=0;i<CATS_VENTA.length;i++)t+=(STATE.inventario[CATS_VENTA[i]]||0);return t;}
+
+// ── ESTADO ──────────────────────────────────────────
+function estadoVacio(){
+  return{
+    recolectas:{},clasificaciones:{},
+    inventario:{B:0,A:0,AA:0,AAA:0,Jumbo:0,Partidos:0},
+    salidas:[],
+    bloqueados:{recolectas:{},clasificaciones:{}}
+  };
+}
+var STATE = estadoVacio();
+var ROL = null;
+var LOGIN_ROL = null;
+var LOGIN_PIN = "";
+var LOGIN_ERR = "";
+var TAB_G = "recolecta";
+var TAB_A = "inventario";
+
+var _saveTimer=null;
+function salvarLocal(){
+  try{localStorage.setItem("finca_v5",JSON.stringify(STATE));}catch(e){}
+  if(_saveTimer)clearTimeout(_saveTimer);
+  _saveTimer=setTimeout(function(){
+    try{setDoc(_REF,JSON.parse(JSON.stringify(STATE)));}catch(e){console.error("FB save:",e);}
+  },800);
+}
+
+// Escuchar cambios Firebase en tiempo real
+onSnapshot(_REF,function(snap){
+  if(snap.exists()){STATE=Object.assign(estadoVacio(),snap.data());}
+  _fbOk=true;
+  if(!ROL)render();
+},function(err){
+  console.error("FB error:",err);
+  _fbOk=false;
+  try{var s=localStorage.getItem("finca_v5");if(s)STATE=Object.assign(estadoVacio(),JSON.parse(s));}catch(e){}
+  render();
+});
+// Cargar local mientras Firebase conecta
+try{var _ls=localStorage.getItem("finca_v5");if(_ls)STATE=Object.assign(estadoVacio(),JSON.parse(_ls));}catch(e){}
+render();
+
+// ── DOM HELPERS ─────────────────────────────────────
+function el(tag,style,children){
+  var e=document.createElement(tag);
+  if(style)Object.assign(e.style,style);
+  if(children){
+    if(!Array.isArray(children))children=[children];
+    for(var i=0;i<children.length;i++){
+      var c=children[i];
+      if(c===null||c===undefined||c===false)continue;
+      if(typeof c==="string"||typeof c==="number")e.appendChild(document.createTextNode(String(c)));
+      else e.appendChild(c);
+    }
+  }
+  return e;
+}
+function txt(s){return document.createTextNode(String(s));}
+function btn(label,style,onClick){
+  var b=document.createElement("button");
+  Object.assign(b.style,{border:"none",cursor:"pointer",fontFamily:"Georgia,serif"});
+  if(style)Object.assign(b.style,style);
+  if(typeof label==="string")b.textContent=label;
+  else b.appendChild(label);
+  b.addEventListener("click",onClick);
+  return b;
+}
+function inp(type,value,style,onChange){
+  var i=document.createElement("input");
+  i.type=type;
+  i.value=String(value||"");
+  Object.assign(i.style,{fontFamily:"Georgia,serif"});
+  if(style)Object.assign(i.style,style);
+  if(onChange)i.addEventListener(type==="date"||type==="text"?"change":"input",onChange);
+  return i;
+}
+
+function stepper(val,color,onChange){
+  var n=parseInt(val)||0;
+  var wrap=el("div",{display:"flex",alignItems:"center",borderRadius:"12px",border:"2px solid "+color+"55",overflow:"hidden",background:"#fff"});
+  var bm=btn("-",{width:"46px",height:"46px",background:color+"22",color:color,fontSize:"24px",fontWeight:"bold",flexShrink:"0"},function(){onChange(String(Math.max(0,n-1)));});
+  var ni=document.createElement("input");
+  ni.type="number";ni.min="0";ni.value=String(val||"");
+  Object.assign(ni.style,{flex:"1",border:"none",outline:"none",textAlign:"center",fontSize:"20px",fontWeight:"bold",color:"#2a1a00",background:"transparent",width:"0",minWidth:"0",padding:"0 4px",fontFamily:"Georgia,serif"});
+  // Debounce: only rebuild after user stops typing (800ms), keeps keyboard open
+  var _t=null;
+  ni.addEventListener("input",function(e){
+    var v=e.target.value;
+    if(v===""||(/^\d+$/.test(v)&&parseInt(v)>=0)){
+      if(_t)clearTimeout(_t);
+      _t=setTimeout(function(){onChange(v);},800);
+    }
+  });
+  ni.addEventListener("blur",function(e){
+    // When user leaves field, update immediately
+    if(_t)clearTimeout(_t);
+    var v=e.target.value;
+    if(v===""||(/^\d+$/.test(v)&&parseInt(v)>=0))onChange(v);
+  });
+  var bp=btn("+",{width:"46px",height:"46px",background:color+"22",color:color,fontSize:"24px",fontWeight:"bold",flexShrink:"0"},function(){onChange(String(n+1));});
+  wrap.appendChild(bm);wrap.appendChild(ni);wrap.appendChild(bp);
+  return wrap;
+}
+
+function badge(text,color){
+  return el("span",{background:color+"22",color:color,borderRadius:"9px",padding:"4px 11px",fontSize:"13px",fontWeight:"bold"},[text]);
+}
+
+// ── RENDER PRINCIPAL ────────────────────────────────
+function render(){
+  var root=document.getElementById("root");
+  root.innerHTML="";
+  if(!ROL){renderLogin(root);return;}
+  renderApp(root);
+}
+
+// ── LOGIN ────────────────────────────────────────────
+function renderLogin(root){
+  var wrap=el("div",{minHeight:"100vh",background:"linear-gradient(160deg,#3d2008,#7a4f1e 60%,#c17d3c)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"24px"});
+
+  if(!LOGIN_ROL){
+    wrap.appendChild(el("div",{fontSize:"52px",marginBottom:"8px",textAlign:"center"},["🥚"]));
+    wrap.appendChild(el("div",{color:"#fff",fontSize:"22px",fontWeight:"bold",marginBottom:"4px",textAlign:"center"},["Control de Huevos"]));
+    wrap.appendChild(el("div",{color:"rgba(255,255,255,.6)",fontSize:"13px",marginBottom:"32px",textAlign:"center"},["Finca La Cristalina"]));
+    wrap.appendChild(el("div",{color:"rgba(255,255,255,.8)",fontSize:"15px",marginBottom:"16px",textAlign:"center"},["¿Quién eres?"]));
+
+
+
+    var roles=[["granjero","👨‍🌾","Granjero"],["admin","👔","Administrador"]];
+    for(var i=0;i<roles.length;i++){
+      (function(r){
+        var b=btn(r[1]+" "+r[2],{width:"100%",padding:"18px",marginBottom:"12px",borderRadius:"16px",border:"2px solid rgba(255,255,255,.25)",background:"rgba(255,255,255,.12)",color:"#fff",fontSize:"17px",fontWeight:"bold"},
+          function(){LOGIN_ROL=r[0];LOGIN_PIN="";LOGIN_ERR="";render();});
+        wrap.appendChild(b);
+      })(roles[i]);
+    }
+  } else {
+    wrap.appendChild(el("div",{color:"#fff",fontSize:"18px",marginBottom:"4px",textAlign:"center"},[LOGIN_ROL==="granjero"?"👨‍🌾 Granjero":"👔 Administrador"]));
+    wrap.appendChild(el("div",{color:"rgba(255,255,255,.6)",fontSize:"13px",marginBottom:"24px",textAlign:"center"},["Ingresa tu PIN de 4 dígitos"]));
+
+    var dotsDiv=el("div",{display:"flex",justifyContent:"center",gap:"12px",marginBottom:"20px"});
+    for(var d=0;d<4;d++){
+      dotsDiv.appendChild(el("div",{width:"18px",height:"18px",borderRadius:"50%",background:LOGIN_PIN.length>d?"#fff":"rgba(255,255,255,.3)"},[]));
+    }
+    wrap.appendChild(dotsDiv);
+    wrap.appendChild(el("div",{color:"#ff8a80",marginBottom:"12px",fontSize:"13px",minHeight:"20px",textAlign:"center"},[LOGIN_ERR]));
+
+    var grid=el("div",{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"12px",width:"92%",maxWidth:"320px",margin:"0 auto 16px"});
+    var keys=[1,2,3,4,5,6,7,8,9,"",0,"⌫"];
+    for(var k=0;k<keys.length;k++){
+      (function(d){
+        var b=btn(d===""?"":String(d),{padding:"18px 0",borderRadius:"14px",background:d===""?"transparent":"rgba(255,255,255,.18)",color:"#fff",fontSize:"26px",fontWeight:"bold",width:"100%",cursor:d===""?"default":"pointer"},
+          function(){
+            if(d==="")return;
+            if(d==="⌫"){LOGIN_PIN=LOGIN_PIN.slice(0,-1);LOGIN_ERR="";render();return;}
+            if(LOGIN_PIN.length<4){
+              LOGIN_PIN+=String(d);
+              if(LOGIN_PIN.length===4){
+                if(LOGIN_PIN===PINS[LOGIN_ROL]){ROL=LOGIN_ROL;LOGIN_ROL=null;LOGIN_PIN="";LOGIN_ERR="";}
+                else{LOGIN_ERR="PIN incorrecto";LOGIN_PIN="";}
+                render();
+              } else {render();}
+            }
+          });
+        grid.appendChild(b);
+      })(keys[k]);
+    }
+    wrap.appendChild(grid);
+    wrap.appendChild(btn("← Cambiar usuario",{background:"transparent",color:"rgba(255,255,255,.5)",fontSize:"13px"},function(){LOGIN_ROL=null;LOGIN_PIN="";LOGIN_ERR="";render();}));
+  }
+  root.appendChild(wrap);
+}
+
+// ── APP SHELL ────────────────────────────────────────
+function renderApp(root){
+  // Header
+  var hdr=el("div",{background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",padding:"16px",color:"#fff",display:"flex",justifyContent:"space-between",alignItems:"center",position:"sticky",top:"0",zIndex:"10",boxShadow:"0 4px 16px rgba(120,70,20,.3)"});
+  var hl=el("div",{display:"flex",alignItems:"center",gap:"8px"});
+  hl.appendChild(el("span",{fontSize:"22px"},["🥚"]));
+  var ht=el("div",null);
+  ht.appendChild(el("div",{fontSize:"16px",fontWeight:"bold"},["Control de Huevos"]));
+  ht.appendChild(el("div",{fontSize:"11px",opacity:".8"},[(ROL==="granjero"?"👨‍🌾 Granjero":"👔 Admin")+(_fbOk?" · ☁️ Sincronizado":" · ⏳ Conectando...")]));
+  hl.appendChild(ht);hdr.appendChild(hl);
+  hdr.appendChild(btn("Salir 🔒",{background:"rgba(255,255,255,.2)",color:"#fff",borderRadius:"10px",padding:"6px 12px",fontSize:"12px"},function(){
+  ROL=null;LOGIN_ROL=null;LOGIN_PIN="";LOGIN_ERR="";
+  TAB_G="recolecta";TAB_A="inventario";
+  render();
+}));
+  root.appendChild(hdr);
+
+  // Contenido
+  var cont=el("div",null);
+  root.appendChild(cont);
+
+  // Navegación
+  var navEl=null;
+
+  function cambiarTab(t){
+    if(ROL==="granjero")TAB_G=t; else TAB_A=t;
+    if(navEl)root.removeChild(navEl);
+    mostrarVista();
+    navEl=crearNav();
+    root.appendChild(navEl);
+  }
+
+  function crearNav(){
+    var tabs=ROL==="granjero"
+      ?[{id:"recolecta",l:"🧺 Recolecta"},{id:"clasificar",l:"🔢 Clasificar"},{id:"empaque",l:"📦 Empaque"},{id:"historial",l:"📅 Historial"}]
+      :[{id:"inventario",l:"📦 Inventario"},{id:"salida",l:"🚚 Salida"},{id:"historial",l:"📊 Historial"},{id:"produccion",l:"📈 Prod."}];
+    var curTab=ROL==="granjero"?TAB_G:TAB_A;
+    var color=ROL==="granjero"?"#5a9e6f":"#7a4f1e";
+    var nav=el("div",{position:"fixed",bottom:"0",left:"50%",transform:"translateX(-50%)",width:"100%",maxWidth:"480px",background:"#fff",borderTop:"2px solid #f0e0c8",display:"flex",zIndex:"20"});
+    for(var i=0;i<tabs.length;i++){
+      (function(t){
+        var b=btn(t.l,{flex:"1",padding:"10px 2px",background:"transparent",color:curTab===t.id?color:"#bbb",fontSize:"10px",fontWeight:curTab===t.id?"bold":"normal",borderTop:curTab===t.id?"3px solid "+color:"3px solid transparent"},function(){cambiarTab(t.id);});
+        nav.appendChild(b);
+      })(tabs[i]);
+    }
+    return nav;
+  }
+
+  function mostrarVista(){
+    cont.innerHTML="";
+    var v=null;
+    try{
+      if(ROL==="granjero"){
+        if(TAB_G==="recolecta")v=vistaRecolecta(cont);
+        else if(TAB_G==="clasificar")v=vistaClasificar(cont);
+        else if(TAB_G==="empaque")v=vistaEmpaque(cont);
+        else v=vistaHistGranjero();
+      } else {
+        if(TAB_A==="inventario")v=vistaInventario();
+        else if(TAB_A==="salida")v=vistaSalida(cont);
+        else if(TAB_A==="historial")v=vistaHistAdmin(cont);
+        else v=vistaProduccion();
+      }
+      if(v)cont.appendChild(v);
+    }catch(e){cont.innerHTML="<div style='padding:20px;color:#e74c3c'>Error: "+e.message+"</div>";console.error(e);}
+  }
+
+  mostrarVista();
+  navEl=crearNav();
+  root.appendChild(navEl);
+}
+
+// ── RECOLECTA ────────────────────────────────────────
+function vistaRecolecta(cont,modoAdmin,fechaInicial,turnoInicial){
+  var fecha=fechaInicial||hoy();
+  var turno=turnoInicial||"manana";
+  var ent={1:{c:"",s:""},2:{c:"",s:""},3:{c:"",s:""}};
+  var guardado=false,error="";
+
+  function cargarEx(){
+    var ex=(STATE.recolectas[fecha]||{})[turno];
+    for(var i=0;i<GALPONES.length;i++){
+      var g=GALPONES[i];
+      ent[g.id]=ex?{c:String(ex[g.id]?ex[g.id].canastas||"":""),s:String(ex[g.id]?ex[g.id].sueltos||"":"")}:{c:"",s:""};
+    }
+    guardado=false;error="";
+  }
+  cargarEx();
+
+  function build(){
+    var bloq=!modoAdmin&&STATE.bloqueados&&STATE.bloqueados.recolectas&&!!STATE.bloqueados.recolectas[fecha+"_"+turno];
+    var yaGuard=!!(STATE.recolectas[fecha]&&STATE.recolectas[fecha][turno]);
+    var totalPrev=0;
+    for(var i=0;i<GALPONES.length;i++){var g=GALPONES[i];totalPrev+=(parseInt(ent[g.id].c)||0)*CPK+(parseInt(ent[g.id].s)||0);}
+
+    cont.innerHTML="";
+    var w=el("div",{padding:"20px 16px 90px"});
+    w.appendChild(el("h3",{color:"#7a4f1e",marginBottom:"14px",fontSize:"16px"},["🧺 Registro de Recolecta"]));
+
+    if(bloq)w.appendChild(el("div",{background:"#fff8e1",border:"2px solid #f9a825",borderRadius:"14px",padding:"14px",marginBottom:"16px",display:"flex",gap:"10px",alignItems:"center"},[
+      el("span",{fontSize:"22px"},["🔒"]),
+      el("div",null,[el("div",{fontWeight:"bold",color:"#e65100",fontSize:"14px"},["Registro bloqueado"]),el("div",{fontSize:"12px",color:"#888"},["Solo el admin puede modificarlo."])])
+    ]));
+
+    // Fecha
+    var fi=inp("date",fecha,{width:"100%",padding:"11px 13px",borderRadius:"11px",border:"2px solid #e8c990",background:"#fffbf3",color:"#4a2e0a",outline:"none",boxSizing:"border-box"},function(e){fecha=e.target.value;cargarEx();build();});
+    w.appendChild(el("div",{marginBottom:"13px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold",display:"block",marginBottom:"5px"},["📆 Fecha"]),fi]));
+
+    // Turno
+    var tRow=el("div",{display:"flex",gap:"10px"});
+    var turnos=["manana","tarde"];
+    for(var ti=0;ti<2;ti++){
+      (function(t){
+        tRow.appendChild(btn(t==="manana"?"🌅 Mañana":"🌇 Tarde",{flex:"1",padding:"13px 0",borderRadius:"14px",border:turno===t?"2px solid #c17d3c":"2px solid #e8c990",background:turno===t?"#c17d3c":"#fffbf3",color:turno===t?"#fff":"#7a4f1e",fontSize:"14px",fontWeight:"bold"},function(){turno=t;cargarEx();build();}));
+      })(turnos[ti]);
+    }
+    w.appendChild(el("div",{marginBottom:"18px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold",display:"block",marginBottom:"7px"},["⏰ Turno"]),tRow]));
+
+    // Galpones
+    for(var gi=0;gi<GALPONES.length;gi++){
+      (function(g){
+        var tot=(parseInt(ent[g.id].c)||0)*CPK+(parseInt(ent[g.id].s)||0);
+        var pct=Math.round(tot/g.g*100);
+        var sN=parseInt(ent[g.id].s)||0;
+        var col=bloq?"#ccc":g.c;
+        var card=el("div",{background:"#fff",borderRadius:"18px",padding:"15px",marginBottom:"14px",border:"2px solid "+(bloq?"#ccc":g.c+"33"),opacity:bloq?"0.75":"1"});
+        var hdr=el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"12px"},[badge(g.e+" "+g.n,bloq?"#aaa":g.c)]);
+        if(tot>0){var inf=el("div",{textAlign:"right"},[el("div",{fontSize:"13px",fontWeight:"bold",color:pct>=80?"#27ae60":pct>=55?"#e8a045":"#c0392b"},[tot+" huevos"]),el("div",{fontSize:"11px",color:"#aaa"},[pct+"%"])]);hdr.appendChild(inf);}
+        card.appendChild(hdr);
+
+        // Canastas
+        var canN=parseInt(ent[g.id].c)||0;
+        var sC=stepper(ent[g.id].c,col,function(gid){return function(v){if(!bloq){ent[gid].c=v;build();}};}(g.id));
+        var canDiv=el("div",{marginBottom:"10px"},[
+          el("div",{display:"flex",justifyContent:"space-between",marginBottom:"5px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold"},["🧺 Canastas completas"]),el("span",{fontSize:"11px",color:"#bbb"},["×"+CPK])]),
+          sC
+        ]);
+        if(canN>0)canDiv.appendChild(el("div",{textAlign:"center",marginTop:"4px",fontSize:"12px",color:g.c,fontWeight:"bold"},[canN+" canasta"+(canN>1?"s":"")+" = "+canN*CPK+" huevos"]));
+        card.appendChild(canDiv);
+
+        // Sueltos
+        var sS=stepper(ent[g.id].s,bloq?"#ccc":"#c17d3c",function(gid){return function(v){if(!bloq){ent[gid].s=v;build();}};}(g.id));
+        var sulDiv=el("div",{background:"#fdf6ec",borderRadius:"11px",padding:"11px",border:"1.5px dashed #e8c990"},[
+          el("div",{display:"flex",justifyContent:"space-between",marginBottom:"5px"},[el("label",{fontSize:"12px",color:"#a07030",fontWeight:"bold"},["🥚 Canasta incompleta"]),el("span",{fontSize:"11px",color:"#bbb"},["sueltos"])]),
+          sS
+        ]);
+        if(sN>=CPK)sulDiv.appendChild(el("div",{marginTop:"5px",fontSize:"12px",color:"#e74c3c",background:"#fdecea",borderRadius:"7px",padding:"4px 8px"},["⚠️ Ya son "+Math.floor(sN/CPK)+" canasta(s). ¿Revisas?"]));
+        card.appendChild(sulDiv);
+
+        if(tot>0)card.appendChild(el("div",{marginTop:"10px",background:g.c+"12",borderRadius:"9px",padding:"7px 11px",display:"flex",justifyContent:"space-between"},[
+          el("span",{fontSize:"13px",color:"#6a3e0a"},[(canN>0?canN+" canasta"+(canN>1?"s":""):"")+(canN>0&&sN>0?" + ":" ")+(sN>0?sN+" sueltos":"")]),
+          el("span",{fontWeight:"bold",color:g.c},["= "+tot+" 🥚"])
+        ]));
+
+        var otro=turno==="manana"?"tarde":"manana";
+        var otroT=tgalpon((STATE.recolectas[fecha]||{})[otro],g.id);
+        var hayOtro=STATE.recolectas[fecha]&&STATE.recolectas[fecha][otro]&&STATE.recolectas[fecha][otro][g.id]!==undefined;
+        if(hayOtro)card.appendChild(el("div",{marginTop:"8px",fontSize:"12px",color:"#999",borderTop:"1px solid #f0e0c8",paddingTop:"7px"},[(otro==="manana"?"🌅 Mañana":"🌇 Tarde")+" guardado: "+otroT+" huevos"]));
+        w.appendChild(card);
+      })(GALPONES[gi]);
+    }
+
+    // Total preview
+    if(!bloq&&totalPrev>0)w.appendChild(el("div",{background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",borderRadius:"15px",padding:"15px",marginBottom:"14px",color:"#fff",textAlign:"center"},[
+      el("div",{fontSize:"12px",opacity:".85"},["Total este turno"]),
+      el("div",{fontSize:"34px",fontWeight:"bold"},[totalPrev+" 🥚"]),
+      el("div",{fontSize:"12px",opacity:".7"},["🧺 "+Math.floor(totalPrev/CPK)+" canastas + "+totalPrev%CPK+" sueltos"])
+    ]));
+
+    if(error)w.appendChild(el("div",{background:"#fdecea",border:"1px solid #e74c3c",borderRadius:"11px",padding:"11px 14px",color:"#c0392b",marginBottom:"12px",fontSize:"13px"},["⚠️ "+error]));
+
+    function doSave(){
+      var datos={};
+      for(var i=0;i<GALPONES.length;i++){var g=GALPONES[i];datos[g.id]={canastas:parseInt(ent[g.id].c)||0,sueltos:parseInt(ent[g.id].s)||0};}
+      if(!STATE.recolectas[fecha])STATE.recolectas[fecha]={};
+      STATE.recolectas[fecha][turno]=datos;
+      // Si admin edita, desbloquear
+      if(modoAdmin&&STATE.bloqueados&&STATE.bloqueados.recolectas){
+        delete STATE.bloqueados.recolectas[fecha+"_"+turno];
+      }
+      salvarLocal();guardado=true;build();
+    }
+
+    if(modoAdmin){
+      // Admin: siempre puede guardar sin restricción
+      w.appendChild(btn("✏️ Guardar cambios (Admin)",{width:"100%",padding:"15px",borderRadius:"15px",background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",color:"#fff",fontSize:"16px",fontWeight:"bold",marginBottom:"10px"},function(){
+        error="";doSave();
+      }));
+      if(guardado)w.appendChild(el("div",{background:"#eafaf1",border:"1px solid #5a9e6f",borderRadius:"11px",padding:"11px 14px",color:"#27ae60",marginBottom:"12px",fontSize:"13px",fontWeight:"bold",textAlign:"center"},["✅ Cambios guardados por admin."]));
+    } else if(!bloq){
+      if(!guardado){
+        w.appendChild(btn("0️⃣ No hubo recolecta este turno",{width:"100%",padding:"11px",borderRadius:"12px",border:"2px dashed #aaa",background:"#f5f5f5",color:"#888",fontSize:"13px",fontWeight:"bold",marginBottom:"10px"},function(){
+          for(var i=0;i<GALPONES.length;i++){ent[GALPONES[i].id]={c:"0",s:"0"};}
+          error="";doSave();
+        }));
+        w.appendChild(btn("💾 Guardar Recolecta",{width:"100%",padding:"15px",borderRadius:"15px",background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",color:"#fff",fontSize:"16px",fontWeight:"bold",marginBottom:"10px"},function(){
+          // Allow save even if all are 0 (no hubo recolecta en este turno)
+          // Only block if fields are completely empty (not touched)
+          var todosVacios=true;
+          for(var i=0;i<GALPONES.length;i++){var g=GALPONES[i];if(ent[g.id].c!==""||ent[g.id].s!==""){todosVacios=false;break;}}
+          if(todosVacios){
+            // Auto-fill with 0 so user can save "no hubo recolecta"
+            for(var i=0;i<GALPONES.length;i++){ent[GALPONES[i].id]={c:"0",s:"0"};}
+          }
+          error="";doSave();
+        }));
+      } else if(yaGuard){
+        w.appendChild(el("div",{background:"#eafaf1",border:"1px solid #5a9e6f",borderRadius:"11px",padding:"11px 14px",color:"#27ae60",marginBottom:"12px",fontSize:"13px",fontWeight:"bold",textAlign:"center"},["✅ Guardado correctamente"]));
+        w.appendChild(btn("🔒 Confirmar y Bloquear",{width:"100%",padding:"15px",borderRadius:"15px",background:"linear-gradient(135deg,#1a6b3a,#27ae60)",color:"#fff",fontSize:"16px",fontWeight:"bold",marginBottom:"6px"},function(){
+          if(!STATE.bloqueados)STATE.bloqueados={recolectas:{},clasificaciones:{}};
+          if(!STATE.bloqueados.recolectas)STATE.bloqueados.recolectas={};
+          STATE.bloqueados.recolectas[fecha+"_"+turno]=true;
+          salvarLocal();guardado=false;build();
+        }));
+        w.appendChild(el("div",{textAlign:"center",fontSize:"11px",color:"#aaa"},["Una vez confirmado, solo el admin puede editarlo."]));
+      }
+    }
+    cont.appendChild(w);
+  }
+  build();
+  return null;
+}
+
+// ── CLASIFICAR ───────────────────────────────────────
+function vistaClasificar(cont,modoAdmin,fechaInicial){
+  var fecha=fechaInicial||hoy();
+  var clasif={};
+  for(var i=0;i<CATS.length;i++)clasif[CATS[i]]={c:"",s:""};
+  var guardado=false,error="",pidiendo=false;
+
+  function totCat(c){return(parseInt(clasif[c].c)||0)*CPK+(parseInt(clasif[c].s)||0);}
+
+  function cargarEx(){
+    var ex=STATE.clasificaciones[fecha];
+    for(var i=0;i<CATS.length;i++){
+      var c=CATS[i];
+      if(ex&&ex[c]!==undefined){
+        if(typeof ex[c]==="object"&&ex[c]!==null)clasif[c]={c:String(ex[c].canastas||""),s:String(ex[c].sueltos||"")};
+        else clasif[c]={c:"",s:String(ex[c]||"")};
+      } else clasif[c]={c:"",s:""};
+    }
+    guardado=false;error="";pidiendo=false;
+  }
+  cargarEx();
+
+  function doGuardar(ajustar){
+    var obj={};
+    for(var i=0;i<CATS.length;i++){var c=CATS[i];obj[c]={canastas:parseInt(clasif[c].c)||0,sueltos:parseInt(clasif[c].s)||0,total:totCat(c)};}
+    var totalC=0;for(var i=0;i<CATS.length;i++)totalC+=totCat(CATS[i]);
+    var totalR=tdia(fecha);
+    var vieja=STATE.clasificaciones[fecha];
+    if(vieja){for(var i=0;i<CATS.length;i++){var c=CATS[i];if(c!=="Partidos"){var vt=typeof vieja[c]==="object"?vieja[c].total||0:vieja[c]||0;STATE.inventario[c]=Math.max(0,(STATE.inventario[c]||0)-vt);}}}
+    for(var i=0;i<CATS.length;i++){var c=CATS[i];if(c!=="Partidos")STATE.inventario[c]=(STATE.inventario[c]||0)+obj[c].total;}
+    STATE.clasificaciones[fecha]=obj;
+    if(ajustar&&totalC!==totalR){
+      var diff=totalC-totalR;
+      var dr=STATE.recolectas[fecha];
+      if(dr){
+        var t2=dr.tarde||dr.manana;
+        if(t2&&t2[1]){var tot2=((t2[1].canastas||0)*CPK+(t2[1].sueltos||0))+diff;if(tot2<0)tot2=0;t2[1].canastas=Math.floor(tot2/CPK);t2[1].sueltos=tot2%CPK;}
+      }
+    }
+    salvarLocal();pidiendo=false;guardado=true;build();
+  }
+
+  function build(){
+    var bloq=!modoAdmin&&STATE.bloqueados&&STATE.bloqueados.clasificaciones&&!!STATE.bloqueados.clasificaciones[fecha];
+    var totalR=tdia(fecha);
+    var diaR=STATE.recolectas[fecha];
+    var clasifEx=STATE.clasificaciones[fecha];
+    var totalC=0;for(var i=0;i<CATS.length;i++)totalC+=totCat(CATS[i]);
+    var diff=totalR-totalC;
+
+    cont.innerHTML="";
+    var w=el("div",{padding:"20px 16px 90px"});
+    w.appendChild(el("h3",{color:"#7a4f1e",marginBottom:"4px",fontSize:"16px"},["🔢 Clasificación de Huevos"]));
+    w.appendChild(el("p",{color:"#aaa",fontSize:"12px",marginBottom:"14px"},["Canastas + sueltos por categoría."]));
+
+    if(bloq)w.appendChild(el("div",{background:"#fff8e1",border:"2px solid #f9a825",borderRadius:"14px",padding:"14px",marginBottom:"16px",display:"flex",gap:"10px",alignItems:"center"},[
+      el("span",{fontSize:"22px"},["🔒"]),el("div",null,[el("div",{fontWeight:"bold",color:"#e65100",fontSize:"14px"},["Clasificación bloqueada"]),el("div",{fontSize:"12px",color:"#888"},["Solo el admin puede modificarla."])])
+    ]));
+
+    var fi=inp("date",fecha,{width:"100%",padding:"11px 13px",borderRadius:"11px",border:"2px solid #e8c990",background:"#fffbf3",color:"#4a2e0a",outline:"none",boxSizing:"border-box"},function(e){fecha=e.target.value;cargarEx();build();});
+    w.appendChild(el("div",{marginBottom:"14px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold",display:"block",marginBottom:"5px"},["📆 Fecha"]),fi]));
+
+    // Banner
+    var bBg=diaR?"linear-gradient(135deg,#7a4f1e,#c17d3c)":"#f5f5f5";
+    var bCol=diaR?"#fff":"#bbb";
+    var baner=el("div",{background:bBg,borderRadius:"14px",padding:"14px",marginBottom:"16px",color:bCol,display:"flex",justifyContent:"space-between",alignItems:"center"});
+    var bl=el("div",null,[el("div",{fontSize:"12px",opacity:".8"},["Total recogido ese día"]),el("div",{fontSize:"26px",fontWeight:"bold"},[totalR+" 🥚"])]);
+    if(diaR)bl.appendChild(el("div",{fontSize:"11px",opacity:".7"},["M: "+tturno(diaR.manana)+" · T: "+tturno(diaR.tarde)]));
+    baner.appendChild(bl);
+    if(clasifEx)baner.appendChild(el("span",{background:"rgba(255,255,255,.25)",borderRadius:"8px",padding:"3px 10px",fontSize:"12px",color:"#fff",fontWeight:"bold"},["✅ Ya clasificado"]));
+    else if(!diaR)baner.appendChild(el("div",{fontSize:"13px"},["Sin recolecta"]));
+    w.appendChild(baner);
+
+    // Categorías
+    for(var ci=0;ci<CATS.length;ci++){
+      (function(c){
+        var col=bloq?"#ccc":CC[c];
+        var totC=totCat(c);var canN=parseInt(clasif[c].c)||0;var suN=parseInt(clasif[c].s)||0;
+        var card=el("div",{background:"#fff",borderRadius:"18px",padding:"15px",marginBottom:"14px",border:"2px solid "+(bloq?"#ccc":CC[c]+"33"),opacity:bloq?"0.75":"1"});
+        var hdr=el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"12px"},[badge(CE[c]+" "+(c==="Partidos"?"Partidos":"Categoría "+c),col)]);
+        if(totC>0)hdr.appendChild(el("div",{textAlign:"right"},[el("div",{fontSize:"13px",fontWeight:"bold",color:col},[totC+" huevos"]),el("div",{fontSize:"10px",color:"#aaa"},["🧺 "+Math.floor(totC/CPK)+"+"+totC%CPK])]));
+        card.appendChild(hdr);
+        var sC=stepper(clasif[c].c,col,function(cc){return function(v){if(!bloq){clasif[cc].c=v;build();}};}(c));
+        var canDiv=el("div",{marginBottom:"10px"},[el("div",{display:"flex",justifyContent:"space-between",marginBottom:"5px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold"},["🧺 Canastas completas"]),el("span",{fontSize:"11px",color:"#bbb"},["×"+CPK])]),sC]);
+        if(canN>0)canDiv.appendChild(el("div",{textAlign:"center",marginTop:"4px",fontSize:"12px",color:col,fontWeight:"bold"},[canN+" canasta"+(canN>1?"s":"")+" = "+canN*CPK+" huevos"]));
+        card.appendChild(canDiv);
+        var sS=stepper(clasif[c].s,bloq?"#ccc":"#c17d3c",function(cc){return function(v){if(!bloq){clasif[cc].s=v;build();}};}(c));
+        var sulDiv=el("div",{background:"#fdf6ec",borderRadius:"11px",padding:"11px",border:"1.5px dashed #e8c990"},[el("div",{display:"flex",justifyContent:"space-between",marginBottom:"5px"},[el("label",{fontSize:"12px",color:"#a07030",fontWeight:"bold"},["🥚 Canasta incompleta"]),el("span",{fontSize:"11px",color:"#bbb"},["sueltos"])]),sS]);
+        if(suN>=CPK)sulDiv.appendChild(el("div",{marginTop:"5px",fontSize:"12px",color:"#e74c3c",background:"#fdecea",borderRadius:"7px",padding:"4px 8px"},["⚠️ Ya son "+Math.floor(suN/CPK)+" canasta(s). ¿Revisas?"]));
+        card.appendChild(sulDiv);
+        if(totC>0)card.appendChild(el("div",{marginTop:"10px",background:col+"12",borderRadius:"9px",padding:"7px 11px",display:"flex",justifyContent:"space-between"},[el("span",{fontSize:"13px",color:"#6a3e0a"},[(canN>0?canN+" canasta"+(canN>1?"s":""):"")+(canN>0&&suN>0?" + ":" ")+(suN>0?suN+" sueltos":"")]),el("span",{fontWeight:"bold",color:col},["= "+totC+" 🥚"])]));
+        w.appendChild(card);
+      })(CATS[ci]);
+    }
+
+    // Cuadre
+    var cc2=diff===0&&totalC>0?"#27ae60":diff!==0&&totalC>0?"#e74c3c":"#ccc";
+    var cuadreDiv=el("div",{background:diff===0&&totalC>0?"#eafaf1":diff!==0&&totalC>0?"#fdecea":"#f9f9f9",border:"2px solid "+cc2,borderRadius:"14px",padding:"14px",marginBottom:"16px",textAlign:"center"},[
+      el("div",{fontSize:"13px",color:"#888",marginBottom:"4px"},["Total clasificado"]),
+      el("div",{fontSize:"26px",fontWeight:"bold",color:cc2},[totalC+" / "+totalR])
+    ]);
+    if(totalC>0)cuadreDiv.appendChild(el("div",{fontSize:"13px",marginTop:"4px",fontWeight:"bold",color:diff===0?"#27ae60":"#e74c3c"},[diff===0?"✅ ¡Cuadra perfecto!":diff>0?"Faltan "+diff+" por clasificar":Math.abs(diff)+" de más — revisa"]));
+    w.appendChild(cuadreDiv);
+
+    if(error)w.appendChild(el("div",{background:"#fdecea",border:"1px solid #e74c3c",borderRadius:"11px",padding:"11px 14px",color:"#c0392b",marginBottom:"12px",fontSize:"13px"},["⚠️ "+error]));
+
+    if(!bloq){
+      if(pidiendo){
+        var diffAbs=Math.abs(diff);var esMas=diff<0;
+        var panel=el("div",{background:"#fff8e1",border:"2px solid #f9a825",borderRadius:"14px",padding:"16px",marginBottom:"14px"},[
+          el("div",{fontWeight:"bold",color:"#e65100",fontSize:"14px",marginBottom:"8px"},["⚠️ Diferencia de "+diffAbs+" huevo"+(diffAbs>1?"s":"")]),
+          el("div",{fontSize:"13px",color:"#888",marginBottom:"14px"},[esMas?"Clasificaste "+diffAbs+" más de lo registrado.":"Clasificaste "+diffAbs+" menos de lo registrado."]),
+          el("div",{fontSize:"13px",color:"#7a4f1e",fontWeight:"bold",marginBottom:"12px"},["¿Qué deseas hacer?"])
+        ]);
+        var ops=el("div",{display:"flex",flexDirection:"column",gap:"10px"});
+        ops.appendChild(btn("✅ Guardar y ajustar recolecta ("+(esMas?"+":"-")+diffAbs+")",{padding:"13px",borderRadius:"12px",background:"linear-gradient(135deg,#1a6b3a,#27ae60)",color:"#fff",fontSize:"14px",fontWeight:"bold"},function(){doGuardar(true);}));
+        ops.appendChild(btn("💾 Guardar sin ajustar",{padding:"13px",borderRadius:"12px",border:"2px solid #7a4f1e",background:"#fffbf3",color:"#7a4f1e",fontSize:"14px",fontWeight:"bold"},function(){doGuardar(false);}));
+        ops.appendChild(btn("✗ Cancelar y revisar",{padding:"11px",borderRadius:"12px",border:"2px solid #ccc",background:"#f5f5f5",color:"#888",fontSize:"13px"},function(){pidiendo=false;build();}));
+        panel.appendChild(ops);w.appendChild(panel);
+      } else if(!guardado){
+        w.appendChild(btn("💾 Guardar Clasificación",{width:"100%",padding:"15px",borderRadius:"15px",background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",color:"#fff",fontSize:"16px",fontWeight:"bold",marginBottom:"10px"},function(){
+          if(!diaR){error="No hay recolecta para esta fecha.";build();return;}
+          if(totalR===0){error="La recolecta está en cero.";build();return;}
+          for(var i=0;i<CATS.length;i++){if((parseInt(clasif[CATS[i]].s)||0)>=CPK){error=CATS[i]+": sueltos llenan una canasta.";build();return;}}
+          if(diff!==0){pidiendo=true;build();return;}
+          doGuardar(false);
+        }));
+      } else if(clasifEx){
+        w.appendChild(el("div",{background:"#eafaf1",border:"1px solid #5a9e6f",borderRadius:"11px",padding:"11px 14px",color:"#27ae60",marginBottom:"12px",fontSize:"13px",fontWeight:"bold",textAlign:"center"},["✅ Guardado. Inventario actualizado."]));
+        w.appendChild(btn("🔒 Confirmar y Bloquear",{width:"100%",padding:"15px",borderRadius:"15px",background:"linear-gradient(135deg,#1a6b3a,#27ae60)",color:"#fff",fontSize:"16px",fontWeight:"bold",marginBottom:"6px"},function(){
+          if(!STATE.bloqueados.clasificaciones)STATE.bloqueados.clasificaciones={};
+          STATE.bloqueados.clasificaciones[fecha]=true;
+          salvarLocal();guardado=false;build();
+        }));
+        w.appendChild(el("div",{textAlign:"center",fontSize:"11px",color:"#aaa"},["Una vez confirmado, solo el admin puede editarlo."]));
+      }
+    }
+    cont.appendChild(w);
+  }
+  build();return null;
+}
+
+// ── EMPAQUE ──────────────────────────────────────────
+function vistaEmpaque(cont){
+  function build(){
+    cont.innerHTML="";
+    var w=el("div",{padding:"20px 16px 90px"});
+    w.appendChild(el("h3",{color:"#7a4f1e",marginBottom:"4px",fontSize:"16px"},["📦 Preparar Empaque"]));
+    w.appendChild(el("p",{color:"#aaa",fontSize:"12px",marginBottom:"16px"},["Salidas asignadas para empacar."]));
+    var pend=STATE.salidas.filter(function(s){return s.estado==="pendiente_empacar";});
+    var empac=STATE.salidas.filter(function(s){return s.estado==="empacado";});
+    if(!pend.length&&!empac.length){
+      w.appendChild(el("div",{textAlign:"center",padding:"50px 20px"},[el("div",{fontSize:"48px",marginBottom:"12px"},["✅"]),el("div",{fontSize:"16px",color:"#27ae60",fontWeight:"bold",marginBottom:"6px"},["¡Todo al día!"]),el("div",{fontSize:"13px",color:"#aaa"},["No hay salidas pendientes."])]));
+      cont.appendChild(w);return;
+    }
+    if(pend.length){
+      w.appendChild(el("div",{background:"#fff8e1",border:"2px solid #f9a825",borderRadius:"13px",padding:"11px 14px",marginBottom:"14px",display:"flex",gap:"8px",alignItems:"center"},[
+        el("span",{fontSize:"20px"},["📋"]),el("div",null,[el("div",{fontWeight:"bold",color:"#e65100",fontSize:"13px"},[pend.length+" salida"+(pend.length>1?"s":"")+" para empacar"]),el("div",{fontSize:"11px",color:"#888"},["Empaca y confirma."])])
+      ]));
+      for(var pi=0;pi<pend.length;pi++){
+        (function(s){
+          var card=el("div",{background:"#fff",borderRadius:"18px",padding:"15px",marginBottom:"14px",border:"2px solid #f9a825"});
+          card.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"13px"},[
+            el("div",null,[el("div",{fontWeight:"bold",fontSize:"15px",color:"#4a2e0a"},[s.cliente]),el("div",{fontSize:"12px",color:"#aaa"},[fmtFecha(s.fecha)])]),
+            el("div",{textAlign:"right"},[el("div",{background:"#e8a045",color:"#fff",borderRadius:"10px",padding:"5px 11px",fontWeight:"bold"},[s.total+" 🥚"]),el("div",{fontSize:"11px",color:"#aaa"},[(s.totalBultos||1)+" bulto"+((s.totalBultos||1)>1?"s":"")])])
+          ]));
+          if(s.bultos)for(var bi=0;bi<s.bultos.length;bi++){
+            var b=s.bultos[bi];
+            var cnt={};for(var i=0;i<CATS_VENTA.length;i++)cnt[CATS_VENTA[i]]=0;
+            for(var i=0;i<b.anaqueles.length;i++)cnt[b.anaqueles[i].cat]=(cnt[b.anaqueles[i].cat]||0)+1;
+            var tA=b.anaqueles.length;
+            var bc=el("div",{background:"#fdf6ec",borderRadius:"12px",padding:"11px",marginBottom:"8px",border:"1px solid #e8c990"});
+            bc.appendChild(el("div",{display:"flex",justifyContent:"space-between",marginBottom:"7px"},[el("span",{fontWeight:"bold",fontSize:"13px",color:"#7a4f1e"},["📦 Bulto "+(bi+1)]),el("span",{fontSize:"12px",color:"#888"},[tA+" anaquel"+(tA>1?"es":"")+" · "+tA*CPK+" 🥚"])]));
+            var cr=el("div",{display:"flex",gap:"6px",flexWrap:"wrap"});
+            for(var ci=0;ci<CATS_VENTA.length;ci++){var c=CATS_VENTA[ci];if(cnt[c]>0)cr.appendChild(el("div",{background:CC[c]+"18",border:"1.5px solid "+CC[c]+"44",borderRadius:"9px",padding:"5px 10px",textAlign:"center"},[el("div",{color:CC[c],fontSize:"13px",fontWeight:"bold"},[CE[c]+" "+c]),el("div",{fontSize:"12px",color:"#3a2000",fontWeight:"bold"},[cnt[c]+" anaquel"+(cnt[c]>1?"es":"")]),el("div",{fontSize:"10px",color:"#aaa"},[cnt[c]*CPK+" huevos"])]));}
+            bc.appendChild(cr);card.appendChild(bc);
+          }
+          if(s.nota)card.appendChild(el("div",{marginTop:"8px",fontSize:"12px",color:"#888",borderTop:"1px solid #f0e0c8",paddingTop:"7px"},["📝 "+s.nota]));
+          // Botón con confirmación inline
+          var mostrando=false;
+          var bWrap=el("div",{marginTop:"12px"});
+          function showB(sid,bw){
+            bw.innerHTML="";
+            if(!mostrando){
+              bw.appendChild(btn("📦 Empaque Finalizado",{width:"100%",padding:"14px",borderRadius:"13px",background:"linear-gradient(135deg,#e8a045,#c17d3c)",color:"#fff",fontSize:"15px",fontWeight:"bold"},function(){mostrando=true;showB(sid,bw);}));
+            } else {
+              var p=el("div",{background:"#fff8e1",borderRadius:"13px",padding:"14px",border:"2px solid #f9a825",textAlign:"center"},[el("div",{fontSize:"14px",fontWeight:"bold",color:"#e65100",marginBottom:"10px"},["¿Confirmar que el empaque está listo?"])]);
+              var row=el("div",{display:"flex",gap:"10px"});
+              row.appendChild(btn("✗ No",{flex:"1",padding:"12px",borderRadius:"11px",border:"2px solid #ccc",background:"#f5f5f5",color:"#888",fontSize:"14px",fontWeight:"bold"},function(){mostrando=false;showB(sid,bw);}));
+              row.appendChild(btn("✅ Sí, listo",{flex:"2",padding:"12px",borderRadius:"11px",background:"linear-gradient(135deg,#1a6b3a,#27ae60)",color:"#fff",fontSize:"14px",fontWeight:"bold"},function(){
+                for(var i=0;i<STATE.salidas.length;i++){if(STATE.salidas[i].id===sid){STATE.salidas[i].estado="empacado";break;}}
+                salvarLocal();build();
+              }));
+              p.appendChild(row);bw.appendChild(p);
+            }
+          }
+          showB(s.id,bWrap);
+          card.appendChild(bWrap);w.appendChild(card);
+        })(pend[pi]);
+      }
+    }
+    if(empac.length){
+      w.appendChild(el("div",{margin:"6px 0 12px",display:"flex",alignItems:"center",gap:"8px"},[el("div",{height:"1px",flex:"1",background:"#e0e0e0"},[]),el("span",{fontSize:"12px",color:"#aaa",whiteSpace:"nowrap"},["✅ Ya empacados"]),el("div",{height:"1px",flex:"1",background:"#e0e0e0"},[])]));
+      for(var ei=0;ei<empac.length;ei++){var s=empac[ei];
+        w.appendChild(el("div",{background:"#f9f9f9",borderRadius:"14px",padding:"13px",marginBottom:"10px",border:"2px solid #27ae60",display:"flex",justifyContent:"space-between",alignItems:"center"},[
+          el("div",null,[el("div",{fontWeight:"bold",fontSize:"14px",color:"#888"},[s.cliente]),el("div",{fontSize:"11px",color:"#aaa"},[(s.totalBultos||1)+" bulto"+((s.totalBultos||1)>1?"s":"")+" · "+s.total+" 🥚"])]),
+          el("span",{background:"#27ae60",color:"#fff",borderRadius:"9px",padding:"5px 11px",fontSize:"12px",fontWeight:"bold"},["✅ Empacado"])
+        ]));
+      }
+    }
+    cont.appendChild(w);
+  }
+  build();return null;
+}
+
+// ── HISTORIAL GRANJERO ───────────────────────────────
+function inventarioBanner(){
+  var inv=STATE.inventario;
+  var total=tinv();
+
+  // Por categoría: dividir su total entre CPK → canastas + sueltos DE ESA categoría
+  // Total general: suma de todas las canastas + suma de todos los sueltos POR SEPARADO
+  var totalCanastas=0;
+  var totalSueltos=0;
+  var catData={};
+  for(var i=0;i<CATS_VENTA.length;i++){
+    var c=CATS_VENTA[i];
+    var v=inv[c]||0;
+    var can=Math.floor(v/CPK);
+    var sue=v%CPK;
+    catData[c]={v:v,can:can,sue:sue};
+    totalCanastas+=can;    // suma de canastas completas de cada cat
+    totalSueltos+=sue;     // suma de sueltos de cada cat (NO se convierten)
+  }
+
+  var banner=el("div",{background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",borderRadius:"16px",padding:"16px",marginBottom:"18px",color:"#fff"});
+  banner.appendChild(el("div",{fontSize:"13px",opacity:".85",marginBottom:"10px"},["📦 Inventario actual disponible"]));
+
+  var totRow=el("div",{display:"flex",alignItems:"flex-start",gap:"16px",marginBottom:"12px"});
+  totRow.appendChild(el("div",null,[
+    el("div",{fontSize:"32px",fontWeight:"bold",lineHeight:"1"},[total+" 🥚"]),
+    el("div",{fontSize:"12px",opacity:".8",marginTop:"4px"},["🧺 "+totalCanastas+" canasta"+(totalCanastas!==1?"s":"")]),
+    el("div",{fontSize:"12px",opacity:".8"},["🥚 "+totalSueltos+" suelto"+(totalSueltos!==1?"s":"")])
+  ]));
+
+  var cats=el("div",{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"6px",flex:"1"});
+  for(var i=0;i<CATS_VENTA.length;i++){
+    var c=CATS_VENTA[i];var d=catData[c];
+    if(d.v>0){
+      cats.appendChild(el("div",{background:"rgba(255,255,255,.18)",borderRadius:"9px",padding:"7px 10px"},[
+        el("div",{fontSize:"11px",opacity:".85",marginBottom:"2px"},[CE[c]+" "+c]),
+        el("div",{fontSize:"15px",fontWeight:"bold"},[d.v+" 🥚"]),
+        el("div",{fontSize:"10px",opacity:".75"},["🧺 "+d.can+" canasta"+(d.can!==1?"s":"")]),
+        el("div",{fontSize:"10px",opacity:".75"},["🥚 "+d.sue+" suelto"+(d.sue!==1?"s":"")])
+      ]));
+    }
+  }
+  totRow.appendChild(cats);
+  banner.appendChild(totRow);
+  return banner;
+}
+
+function vistaHistGranjero(){
+  var w=el("div",{padding:"20px 16px 90px"});
+  w.appendChild(el("h3",{color:"#7a4f1e",marginBottom:"14px",fontSize:"16px"},["📅 Historial de Recolectas"]));
+  w.appendChild(inventarioBanner());
+  var fechas=Object.keys(STATE.recolectas).sort().reverse();
+  if(!fechas.length){w.appendChild(el("div",{textAlign:"center",color:"#bbb",padding:"40px 0"},["Sin registros aún."]));return w;}
+  for(var fi=0;fi<fechas.length;fi++){
+    var fecha=fechas[fi];var d=STATE.recolectas[fecha];var total=tdia(fecha);
+    var clasif=STATE.clasificaciones[fecha];
+    var bloqM=STATE.bloqueados&&STATE.bloqueados.recolectas&&!!STATE.bloqueados.recolectas[fecha+"_manana"];
+    var bloqT=STATE.bloqueados&&STATE.bloqueados.recolectas&&!!STATE.bloqueados.recolectas[fecha+"_tarde"];
+    var bloqC=STATE.bloqueados&&STATE.bloqueados.clasificaciones&&!!STATE.bloqueados.clasificaciones[fecha];
+    var card=el("div",{background:"#fff",borderRadius:"16px",padding:"15px",marginBottom:"13px",border:fecha===hoy()?"2px solid #c17d3c":"2px solid #f0e0c8"});
+    card.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"11px"},[
+      el("div",null,[el("div",{fontWeight:"bold",fontSize:"14px",color:"#4a2e0a"},[fmtFecha(fecha)+(fecha===hoy()?" · Hoy":"")]),el("div",{fontSize:"11px",color:"#999",marginTop:"2px"},[(d.manana?(bloqM?"🔒":"✅"):"⬜")+" M · "+(d.tarde?(bloqT?"🔒":"✅"):"⬜")+" T · "+(clasif?(bloqC?"🔒 Clasif.":"✅ Clasif."):"⏳ Pendiente")])]),
+      el("div",{textAlign:"right"},[el("div",{background:"#7a4f1e",color:"#fff",borderRadius:"10px",padding:"5px 11px",fontWeight:"bold",fontSize:"15px"},[total+" 🥚"]),el("div",{fontSize:"10px",color:"#aaa",marginTop:"2px"},["🧺 "+fmtCanastas(total)])])
+    ]));
+    var gpRow=el("div",{display:"flex",gap:"7px",marginBottom:clasif?"10px":"0"});
+    for(var gi=0;gi<GALPONES.length;gi++){var g=GALPONES[gi];var gt=tgalpon(d.manana,g.id)+tgalpon(d.tarde,g.id);
+      gpRow.appendChild(el("div",{flex:"1",background:g.c+"15",borderRadius:"9px",padding:"7px 3px",textAlign:"center",border:"1px solid "+g.c+"33"},[el("div",{fontSize:"10px",color:g.c,fontWeight:"bold"},["G"+g.id]),el("div",{fontSize:"14px",fontWeight:"bold",color:"#3a2000"},[gt]),el("div",{fontSize:"10px",color:"#aaa"},[Math.round(gt/g.g*100)+"%"]),el("div",{fontSize:"9px",color:"#aaa"},["🧺"+fmtCanastas(gt)])]));
+    }
+    card.appendChild(gpRow);
+    if(clasif){var cRow=el("div",{display:"flex",gap:"6px",flexWrap:"wrap",borderTop:"1px solid #f0e0c8",paddingTop:"10px"});
+      for(var ci=0;ci<CATS.length;ci++){var c=CATS[ci];var ct=typeof clasif[c]==="object"?clasif[c].total||0:clasif[c]||0;if(ct>0)cRow.appendChild(el("span",{background:CC[c]+"18",color:CC[c],borderRadius:"8px",padding:"3px 8px",fontSize:"12px",fontWeight:"bold"},[CE[c]+c+": "+ct]));}
+      card.appendChild(cRow);
+    }
+    w.appendChild(card);
+  }
+  return w;
+}
+
+// ── INVENTARIO ───────────────────────────────────────
+function vistaInventario(){
+  var inv=STATE.inventario;var total=tinv();
+  var w=el("div",{padding:"20px 16px 90px"});
+  w.appendChild(el("h3",{color:"#7a4f1e",marginBottom:"4px",fontSize:"16px"},["📦 Inventario Actual"]));
+  w.appendChild(el("p",{color:"#aaa",fontSize:"12px",marginBottom:"16px"},["Huevos clasificados disponibles para venta."]));
+  w.appendChild(el("div",{background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",borderRadius:"18px",padding:"22px",marginBottom:"18px",color:"#fff",textAlign:"center"},[
+    el("div",{fontSize:"13px",opacity:".85"},["Total en inventario"]),
+    el("div",{fontSize:"42px",fontWeight:"bold",lineHeight:"1.1"},[total]),
+    el("div",{fontSize:"14px"},["🥚 huevos disponibles"]),
+    (function(){
+      var tCan=0,tSue=0;
+      for(var i=0;i<CATS_VENTA.length;i++){var cc=CATS_VENTA[i];var vv2=inv[cc]||0;tCan+=Math.floor(vv2/CPK);tSue+=vv2%CPK;}
+      return el("div",{fontSize:"12px",opacity:".7",marginTop:"6px"},["🧺 "+tCan+" canastas · 🥚 "+tSue+" sueltos"]);
+    })()
+  ]));
+  for(var i=0;i<CATS_VENTA.length;i++){var c=CATS_VENTA[i];
+    var pct=total>0?Math.round((inv[c]||0)/total*100):0;
+    var card=el("div",{background:"#fff",borderRadius:"15px",padding:"14px",marginBottom:"11px",border:"2px solid "+CC[c]+"33"});
+    var vv=inv[c]||0,vCan=Math.floor(vv/CPK),vSue=vv%CPK;
+    card.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"8px"},[el("span",{fontWeight:"bold",color:CC[c],fontSize:"15px"},[CE[c]+" Categoría "+c]),el("div",{textAlign:"right"},[el("span",{fontWeight:"bold",fontSize:"17px",color:"#3a2000"},[vv+" 🥚"]),el("div",{fontSize:"11px",color:"#aaa"},["🧺 "+vCan+" canasta"+(vCan!==1?"s":"")+" · 🥚 "+vSue+" sueltos"])])]));
+    card.appendChild(el("div",{background:"#f5ead8",borderRadius:"7px",height:"9px",overflow:"hidden"},[el("div",{height:"100%",width:pct+"%",background:CC[c],borderRadius:"7px"},[])]));
+    card.appendChild(el("div",{display:"flex",justifyContent:"space-between",marginTop:"5px",fontSize:"12px",color:"#aaa"},[el("span",null,[pct+"% del inventario"]),el("span",null,[Math.floor((inv[c]||0)/CPK)+" anaqueles"])]));
+    w.appendChild(card);
+  }
+  var totalP=0;var claves=Object.keys(STATE.clasificaciones);for(var i=0;i<claves.length;i++){var cl=STATE.clasificaciones[claves[i]];totalP+=(typeof cl.Partidos==="object"?cl.Partidos.total||0:cl.Partidos||0);}
+  w.appendChild(el("div",{background:"#fff5f5",borderRadius:"14px",padding:"13px",border:"2px solid #e74c3c33"},[el("div",{display:"flex",justifyContent:"space-between",alignItems:"center"},[el("span",{color:"#e74c3c",fontWeight:"bold",fontSize:"13px"},["💔 Partidos (histórico)"]),el("span",{fontWeight:"bold",color:"#e74c3c",fontSize:"15px"},[totalP+" 🥚"])]),el("div",{fontSize:"12px",color:"#aaa",marginTop:"4px"},["No entran al inventario de venta."])]));
+  return w;
+}
+
+// ── SALIDA ───────────────────────────────────────────
+function vistaSalida(cont){
+  var fecha=hoy(),cliente="",nota="";
+  var bultos=[];
+  var error="",guardado=false;
+
+  function cntB(b){var c={};for(var i=0;i<CATS_VENTA.length;i++)c[CATS_VENTA[i]]=0;for(var i=0;i<b.anaqueles.length;i++)c[b.anaqueles[i].cat]=(c[b.anaqueles[i].cat]||0)+1;return c;}
+  function totCat(){var t={};for(var i=0;i<CATS_VENTA.length;i++)t[CATS_VENTA[i]]=0;for(var i=0;i<bultos.length;i++)for(var j=0;j<bultos[i].anaqueles.length;j++)t[bultos[i].anaqueles[j].cat]=(t[bultos[i].anaqueles[j].cat]||0)+1;return t;}
+  function totH(){var t=0;for(var i=0;i<bultos.length;i++)t+=bultos[i].anaqueles.length*CPK;return t;}
+
+  function build(){
+    var inv=STATE.inventario;var tc=totCat();var tH=totH();
+    cont.innerHTML="";
+    var w=el("div",{padding:"20px 16px 90px"});
+    w.appendChild(el("h3",{color:"#7a4f1e",marginBottom:"4px",fontSize:"16px"},["🚚 Registrar Salida para Venta"]));
+    w.appendChild(el("p",{color:"#aaa",fontSize:"12px",marginBottom:"14px"},["Arma los bultos. Cada anaquel = 30 huevos."]));
+
+    // Stock
+    var sr=el("div",{display:"flex",gap:"6px",marginBottom:"16px",overflowX:"auto",paddingBottom:"4px"});
+    for(var i=0;i<CATS_VENTA.length;i++){var c=CATS_VENTA[i];var disp=inv[c]||0;var usando=(tc[c]||0)*CPK;var exc=usando>disp;
+      var dCan=Math.floor(disp/CPK),dSue=disp%CPK;
+      sr.appendChild(el("div",{flex:"0 0 auto",background:exc?"#fdecea":CC[c]+"18",border:"1.5px solid "+(exc?"#e74c3c":CC[c]+"44"),borderRadius:"11px",padding:"7px 10px",textAlign:"center",minWidth:"70px"},[
+        el("div",{fontSize:"11px",color:exc?"#e74c3c":CC[c],fontWeight:"bold"},[CE[c]+" "+c]),
+        el("div",{fontSize:"15px",fontWeight:"bold",color:"#3a2000"},[disp+" 🥚"]),
+        el("div",{fontSize:"10px",color:exc?"#e74c3c":"#888"},[dCan+" canasta"+(dCan!==1?"s":"")]),
+        el("div",{fontSize:"10px",color:exc?"#e74c3c":"#aaa"},[dSue+" sueltos"])
+      ]));
+    }
+    w.appendChild(sr);
+
+    var fi=inp("date",fecha,{width:"100%",padding:"11px 13px",borderRadius:"11px",border:"2px solid #e8c990",background:"#fffbf3",color:"#4a2e0a",outline:"none",boxSizing:"border-box"},function(e){fecha=e.target.value;});
+    w.appendChild(el("div",{marginBottom:"12px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold",display:"block",marginBottom:"5px"},["📆 Fecha de salida"]),fi]));
+
+    var ci=inp("text",cliente,{width:"100%",padding:"11px 13px",borderRadius:"11px",border:"2px solid #e8c990",background:"#fffbf3",color:"#4a2e0a",outline:"none",boxSizing:"border-box"},function(e){cliente=e.target.value;});
+    ci.placeholder="Ej: Supermercado El Río";
+    w.appendChild(el("div",{marginBottom:"16px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold",display:"block",marginBottom:"5px"},["👤 Cliente / Destino"]),ci]));
+
+    var bHdr=el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"10px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold"},["📦 Bultos"+(bultos.length>0?" ("+bultos.length+")":"")])]);
+    bHdr.appendChild(btn("+ Agregar bulto",{background:"#7a4f1e",color:"#fff",borderRadius:"10px",padding:"7px 14px",fontSize:"13px",fontWeight:"bold"},function(){bultos.push({id:Date.now(),anaqueles:[{cat:"A"}]});build();}));
+    w.appendChild(bHdr);
+    if(bultos.length===0){
+      w.appendChild(el("div",{background:"#fdf6ec",borderRadius:"14px",padding:"20px",textAlign:"center",border:"2px dashed #e8c990",marginBottom:"14px"},[
+        el("div",{fontSize:"28px",marginBottom:"8px"},["📦"]),
+        el("div",{fontSize:"14px",color:"#7a4f1e",fontWeight:"bold",marginBottom:"4px"},["Agrega los bultos"]),
+        el("div",{fontSize:"12px",color:"#aaa"},["Toca '+ Agregar bulto' para empezar"])
+      ]));
+    }
+
+    for(var bi=0;bi<bultos.length;bi++){
+      (function(bulto,bIdx){
+        var cnt=cntB(bulto);var tAnaq=bulto.anaqueles.length;
+        var bc=el("div",{background:"#fff",borderRadius:"18px",padding:"15px",marginBottom:"14px",border:"2px solid #e8c990"});
+        var bh=el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"12px"});
+        var bi2=el("div",{display:"flex",alignItems:"center",gap:"8px"},[el("span",{background:"#7a4f1e",color:"#fff",borderRadius:"8px",padding:"4px 10px",fontSize:"13px",fontWeight:"bold"},["Bulto "+(bIdx+1)]),el("span",{fontSize:"12px",color:"#888"},[tAnaq+" anaquel"+(tAnaq>1?"es":"")+" · "+tAnaq*CPK+" 🥚"])]);
+        bh.appendChild(bi2);
+        if(bultos.length>1)bh.appendChild(btn("✕",{background:"#fdecea",border:"1px solid #e74c3c",color:"#e74c3c",borderRadius:"8px",padding:"4px 10px",fontSize:"12px"},function(idx){return function(){bultos.splice(idx,1);build();};}(bIdx)));
+        bc.appendChild(bh);
+        // Resumen cats del bulto
+        var sr2=el("div",{display:"flex",gap:"6px",flexWrap:"wrap",marginBottom:"12px"});
+        for(var ci2=0;ci2<CATS_VENTA.length;ci2++){var c2=CATS_VENTA[ci2];if(cnt[c2]>0)sr2.appendChild(el("span",{background:CC[c2]+"18",color:CC[c2],borderRadius:"8px",padding:"3px 9px",fontSize:"12px",fontWeight:"bold"},[CE[c2]+c2+": "+cnt[c2]]));}
+        if(sr2.children.length)bc.appendChild(sr2);
+        // Anaqueles
+        for(var ai=0;ai<bulto.anaqueles.length;ai++){
+          (function(aq,aIdx){
+            var ar=el("div",{display:"flex",alignItems:"center",gap:"8px",marginBottom:"8px",background:"#fdf6ec",borderRadius:"11px",padding:"9px 11px"},[el("span",{fontSize:"12px",color:"#888",minWidth:"22px"},[(aIdx+1)+"."])]);
+            var sel=el("div",{display:"flex",gap:"5px",flex:"1",flexWrap:"wrap"});
+            for(var si=0;si<CATS_VENTA.length;si++){
+              (function(c3){
+                var isSel=aq.cat===c3;
+                sel.appendChild(btn(CE[c3]+c3,{padding:"6px 9px",borderRadius:"9px",border:"2px solid "+(isSel?CC[c3]:"#e8c990"),background:isSel?CC[c3]+"22":"#fff",color:isSel?CC[c3]:"#aaa",fontSize:"12px",fontWeight:isSel?"bold":"normal"},function(){aq.cat=c3;build();}));
+              })(CATS_VENTA[si]);
+            }
+            ar.appendChild(sel);
+            if(bulto.anaqueles.length>1)ar.appendChild(btn("✕",{background:"none",border:"none",color:"#e74c3c",fontSize:"18px",padding:"0 2px"},function(aI){return function(){bulto.anaqueles.splice(aI,1);build();};}(aIdx)));
+            bc.appendChild(ar);
+          })(bulto.anaqueles[ai],ai);
+        }
+        if(tAnaq<MAX_ANAQ)bc.appendChild(btn("+ Añadir anaquel ("+tAnaq+"/"+MAX_ANAQ+")",{width:"100%",padding:"9px",borderRadius:"11px",border:"2px dashed #c17d3c",background:"#fffbf3",color:"#c17d3c",fontSize:"13px",fontWeight:"bold",marginTop:"4px"},function(){bulto.anaqueles.push({cat:"A"});build();}));
+        w.appendChild(bc);
+      })(bultos[bi],bi);
+    }
+
+    if(tH>0){
+      var rw=el("div",{background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",borderRadius:"15px",padding:"15px",marginBottom:"14px",color:"#fff"},[el("div",{fontSize:"28px",fontWeight:"bold",textAlign:"center",marginBottom:"8px"},[bultos.length+" bulto"+(bultos.length>1?"s":"")+" · "+tH+" 🥚"])]);
+      var cr=el("div",{display:"flex",gap:"7px",flexWrap:"wrap",justifyContent:"center"});
+      for(var i=0;i<CATS_VENTA.length;i++){var c=CATS_VENTA[i];if(tc[c]>0)cr.appendChild(el("span",{background:"rgba(255,255,255,.2)",borderRadius:"8px",padding:"3px 10px",fontSize:"12px",fontWeight:"bold"},[CE[c]+c+": "+tc[c]+" anaq."]));}
+      rw.appendChild(cr);w.appendChild(rw);
+    }
+
+    var ni=inp("text",nota,{width:"100%",padding:"11px 13px",borderRadius:"11px",border:"2px solid #e8c990",background:"#fffbf3",color:"#4a2e0a",outline:"none",boxSizing:"border-box"},function(e){nota=e.target.value;});
+    ni.placeholder="Ej: Pago en efectivo";
+    w.appendChild(el("div",{marginBottom:"14px"},[el("label",{fontSize:"12px",color:"#7a4f1e",fontWeight:"bold",display:"block",marginBottom:"5px"},["📝 Nota (opcional)"]),ni]));
+
+    if(error)w.appendChild(el("div",{background:"#fdecea",border:"1px solid #e74c3c",borderRadius:"11px",padding:"11px 14px",color:"#c0392b",marginBottom:"12px",fontSize:"13px"},["⚠️ "+error]));
+    if(guardado)w.appendChild(el("div",{background:"#eafaf1",border:"1px solid #5a9e6f",borderRadius:"11px",padding:"11px 14px",color:"#27ae60",marginBottom:"12px",fontSize:"13px",fontWeight:"bold"},["✅ Salida registrada. El granjero verá el empaque pendiente."]));
+
+    w.appendChild(btn("🚚 Registrar Salida",{width:"100%",padding:"15px",borderRadius:"15px",background:"linear-gradient(135deg,#7a4f1e,#c17d3c)",color:"#fff",fontSize:"16px",fontWeight:"bold"},function(){
+      if(!cliente.trim()){error="Ingresa el cliente o destino.";build();return;}
+      if(tH===0){error="Agrega al menos un bulto.";build();return;}
+      var tc2=totCat();
+      for(var i=0;i<CATS_VENTA.length;i++){var c=CATS_VENTA[i];if((tc2[c]||0)*CPK>(inv[c]||0)){error="No hay suficiente "+c+". Disponible: "+Math.floor((inv[c]||0)/CPK)+" anaqueles.";build();return;}}
+      error="";
+      var cant={};for(var i=0;i<CATS_VENTA.length;i++){var c=CATS_VENTA[i];cant[c]=(tc2[c]||0)*CPK;}
+      var salida={id:Date.now(),fecha:fecha,cliente:cliente.trim(),bultos:JSON.parse(JSON.stringify(bultos)),cantidades:cant,totalBultos:bultos.length,total:tH,nota:nota.trim(),estado:"pendiente_empacar"};
+      for(var i=0;i<CATS_VENTA.length;i++){var c=CATS_VENTA[i];STATE.inventario[c]=Math.max(0,(STATE.inventario[c]||0)-(cant[c]||0));}
+      STATE.salidas.unshift(salida);
+      salvarLocal();
+      bultos=[{id:Date.now(),anaqueles:[{cat:"A"}]}];cliente="";nota="";guardado=true;build();
+    }));
+    cont.appendChild(w);
+  }
+  build();return null;
+}
+
+// ── HISTORIAL ADMIN ──────────────────────────────────
+function vistaHistAdmin(cont){
+  var tab="salidas",editando=null;
+  function rBultos(s){
+    var frag=document.createDocumentFragment();
+    if(!s.bultos||!s.bultos.length)return frag;
+    for(var bi=0;bi<s.bultos.length;bi++){var b=s.bultos[bi];
+      var cnt={};for(var i=0;i<CATS_VENTA.length;i++)cnt[CATS_VENTA[i]]=0;
+      for(var i=0;i<b.anaqueles.length;i++)cnt[b.anaqueles[i].cat]=(cnt[b.anaqueles[i].cat]||0)+1;
+      var tA=b.anaqueles.length;
+      var bc=el("div",{background:"#fdf6ec",borderRadius:"12px",padding:"10px",marginBottom:"8px",border:"1px solid #e8c990"});
+      bc.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"7px"},[el("span",{fontWeight:"bold",fontSize:"13px",color:"#7a4f1e"},["📦 Bulto "+(bi+1)]),el("span",{fontSize:"12px",color:"#888"},[tA+" anaquel"+(tA>1?"es":"")+" · "+tA*CPK+" 🥚"])]));
+      var cr=el("div",{display:"flex",gap:"5px",flexWrap:"wrap"});
+      for(var ci=0;ci<CATS_VENTA.length;ci++){var c=CATS_VENTA[ci];if(cnt[c]>0)cr.appendChild(el("span",{background:CC[c]+"18",color:CC[c],borderRadius:"7px",padding:"3px 8px",fontSize:"12px",fontWeight:"bold"},[CE[c]+c+": "+cnt[c]]));}
+      bc.appendChild(cr);frag.appendChild(bc);
+    }
+    return frag;
+  }
+
+  function build(){
+    cont.innerHTML="";
+    if(editando){
+      var bk=el("div",{padding:"14px 16px 0",display:"flex",alignItems:"center",gap:"10px"});
+      bk.appendChild(btn("← Volver",{background:"#f0e0c8",borderRadius:"10px",padding:"8px 14px",color:"#7a4f1e",fontWeight:"bold",fontSize:"14px"},function(){editando=null;build();}));
+      bk.appendChild(el("span",{color:"#7a4f1e",fontWeight:"bold",fontSize:"14px"},["Modo edición admin"]));
+      cont.appendChild(bk);
+      if(editando.tipo==="recolecta")vistaRecolecta(cont,true,editando.fecha,editando.turno);
+      else vistaClasificar(cont,true,editando.fecha);
+      return;
+    }
+
+    var w=el("div",{padding:"20px 16px 90px"});
+    w.appendChild(el("h3",{color:"#7a4f1e",marginBottom:"14px",fontSize:"16px"},["📊 Historial"]));
+    var tabs2=el("div",{display:"flex",gap:"7px",marginBottom:"16px"});
+    var tList=["salidas","recolectas","clasif"];var tLabel=["🚚 Salidas","🧺 Recolectas","🔢 Clasif."];
+    for(var i=0;i<3;i++){(function(t,l){tabs2.appendChild(btn(l,{flex:"1",padding:"9px 4px",borderRadius:"11px",background:tab===t?"#7a4f1e":"#f0e0c8",color:tab===t?"#fff":"#7a4f1e",fontWeight:"bold",fontSize:"11px"},function(){tab=t;build();}));})(tList[i],tLabel[i]);}
+    w.appendChild(tabs2);
+
+    if(tab==="salidas"){
+      var pend=STATE.salidas.filter(function(s){return s.estado==="pendiente_empacar";});
+      var empac=STATE.salidas.filter(function(s){return s.estado==="empacado";});
+      var proc=STATE.salidas.filter(function(s){return s.estado==="procesada";});
+      if(!STATE.salidas.length)w.appendChild(el("div",{textAlign:"center",color:"#bbb",padding:"40px 0"},["Sin salidas registradas."]));
+
+      if(pend.length){
+        w.appendChild(el("div",{background:"#fff8e1",border:"2px solid #f9a825",borderRadius:"12px",padding:"10px 14px",marginBottom:"14px",display:"flex",gap:"8px",alignItems:"center"},[el("span",{fontSize:"18px"},["📦"]),el("div",null,[el("div",{fontWeight:"bold",color:"#e65100",fontSize:"13px"},["Pendientes de empacar"]),el("div",{fontSize:"11px",color:"#888"},["El granjero debe confirmar el empaque."])])]));
+        for(var pi=0;pi<pend.length;pi++){var s=pend[pi];
+          var card=el("div",{background:"#fff",borderRadius:"16px",padding:"15px",marginBottom:"12px",border:"2px solid #f9a825"});
+          card.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"12px"},[el("div",null,[el("div",{fontWeight:"bold",fontSize:"15px",color:"#4a2e0a"},[s.cliente]),el("div",{fontSize:"12px",color:"#aaa"},[fmtFecha(s.fecha)])]),el("div",{textAlign:"right"},[el("div",{background:"#f9a825",color:"#fff",borderRadius:"10px",padding:"5px 11px",fontWeight:"bold"},[s.total+" 🥚"]),el("div",{fontSize:"11px",color:"#aaa"},[(s.totalBultos||1)+" bulto"+((s.totalBultos||1)>1?"s":"")])])]));
+          card.appendChild(rBultos(s));
+          if(s.nota)card.appendChild(el("div",{marginTop:"8px",fontSize:"12px",color:"#888",borderTop:"1px solid #f0e0c8",paddingTop:"7px"},["📝 "+s.nota]));
+          card.appendChild(el("div",{marginTop:"10px",textAlign:"center",fontSize:"12px",color:"#aaa",padding:"8px",background:"#fdf6ec",borderRadius:"10px"},["⏳ Esperando que el granjero confirme el empaque..."]));
+          w.appendChild(card);
+        }
+      }
+
+      if(empac.length){
+        w.appendChild(el("div",{background:"#e8f5e9",border:"2px solid #27ae60",borderRadius:"12px",padding:"10px 14px",marginBottom:"14px",display:"flex",gap:"8px",alignItems:"center"},[el("span",{fontSize:"18px"},["✅"]),el("div",null,[el("div",{fontWeight:"bold",color:"#1a6b3a",fontSize:"13px"},["Listas para despachar"]),el("div",{fontSize:"11px",color:"#888"},["El granjero confirmó el empaque."])])]));
+        for(var ei=0;ei<empac.length;ei++){
+          (function(s){
+            var card=el("div",{background:"#fff",borderRadius:"16px",padding:"15px",marginBottom:"12px",border:"2px solid #27ae60"});
+            card.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"12px"},[el("div",null,[el("div",{fontWeight:"bold",fontSize:"15px",color:"#4a2e0a"},[s.cliente]),el("div",{fontSize:"12px",color:"#aaa"},[fmtFecha(s.fecha)])]),el("div",{textAlign:"right"},[el("div",{background:"#27ae60",color:"#fff",borderRadius:"10px",padding:"5px 11px",fontWeight:"bold"},[s.total+" 🥚"]),el("div",{fontSize:"11px",color:"#aaa"},[(s.totalBultos||1)+" bulto"+((s.totalBultos||1)>1?"s":"")])])]));
+            card.appendChild(rBultos(s));
+            if(s.nota)card.appendChild(el("div",{marginTop:"8px",fontSize:"12px",color:"#888",borderTop:"1px solid #e0f0e0",paddingTop:"7px"},["📝 "+s.nota]));
+            var mostrando=false;
+            var dWrap=el("div",{marginTop:"10px"});
+            function showD(sid,dw){
+              dw.innerHTML="";
+              if(!mostrando){
+                dw.appendChild(btn("🚚 Confirmar Despacho",{width:"100%",padding:"13px",borderRadius:"13px",background:"linear-gradient(135deg,#1a6b3a,#27ae60)",color:"#fff",fontSize:"15px",fontWeight:"bold"},function(){mostrando=true;showD(sid,dw);}));
+              } else {
+                var p=el("div",{background:"#e8f5e9",borderRadius:"13px",padding:"14px",border:"2px solid #27ae60",textAlign:"center"},[el("div",{fontSize:"14px",fontWeight:"bold",color:"#1a6b3a",marginBottom:"10px"},["¿Confirmar despacho de esta salida?"])]);
+                var row=el("div",{display:"flex",gap:"10px"});
+                row.appendChild(btn("✗ No",{flex:"1",padding:"12px",borderRadius:"11px",border:"2px solid #ccc",background:"#f5f5f5",color:"#888",fontSize:"14px",fontWeight:"bold"},function(){mostrando=false;showD(sid,dw);}));
+                row.appendChild(btn("✅ Sí, despachar",{flex:"2",padding:"12px",borderRadius:"11px",background:"linear-gradient(135deg,#1a6b3a,#27ae60)",color:"#fff",fontSize:"14px",fontWeight:"bold"},function(){
+                  for(var i=0;i<STATE.salidas.length;i++){if(STATE.salidas[i].id===sid){STATE.salidas[i].estado="procesada";break;}}
+                  salvarLocal();build();
+                }));
+                p.appendChild(row);dw.appendChild(p);
+              }
+            }
+            showD(s.id,dWrap);
+            card.appendChild(dWrap);w.appendChild(card);
+          })(empac[ei]);
+        }
+      }
+
+      if(proc.length){
+        w.appendChild(el("div",{margin:"6px 0 12px",display:"flex",alignItems:"center",gap:"8px"},[el("div",{height:"1px",flex:"1",background:"#e0e0e0"},[]),el("span",{fontSize:"12px",color:"#aaa",whiteSpace:"nowrap"},["✅ Despachadas"]),el("div",{height:"1px",flex:"1",background:"#e0e0e0"},[])]));
+        for(var ri=0;ri<proc.length;ri++){var s=proc[ri];
+          var card=el("div",{background:"#f9f9f9",borderRadius:"16px",padding:"14px",marginBottom:"12px",border:"2px solid #e0e0e0"});
+          card.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"10px"},[el("div",null,[el("div",{fontWeight:"bold",fontSize:"14px",color:"#888"},[s.cliente]),el("div",{fontSize:"11px",color:"#aaa"},[fmtFecha(s.fecha)])]),el("div",{textAlign:"right"},[el("div",{background:"#27ae60",color:"#fff",borderRadius:"10px",padding:"5px 11px",fontWeight:"bold"},[s.total+" 🥚 ✅"]),el("div",{fontSize:"11px",color:"#aaa"},[(s.totalBultos||1)+" bulto"+((s.totalBultos||1)>1?"s":"")])])]));
+          card.appendChild(rBultos(s));
+          if(s.nota)card.appendChild(el("div",{marginTop:"7px",fontSize:"12px",color:"#aaa",borderTop:"1px solid #eee",paddingTop:"6px"},["📝 "+s.nota]));
+          w.appendChild(card);
+        }
+      }
+    }
+
+    if(tab==="recolectas"){
+      w.appendChild(el("p",{fontSize:"12px",color:"#aaa",marginBottom:"14px"},["Edita cualquier recolecta como admin."]));
+      var fechas2=Object.keys(STATE.recolectas).sort().reverse();
+      if(!fechas2.length)w.appendChild(el("div",{textAlign:"center",color:"#bbb",padding:"40px 0"},["Sin recolectas."]));
+      for(var fi=0;fi<fechas2.length;fi++){(function(fecha){
+        var d=STATE.recolectas[fecha];var total=tdia(fecha);
+        var card=el("div",{background:"#fff",borderRadius:"15px",padding:"14px",marginBottom:"12px",border:"2px solid #f0e0c8"});
+        card.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"10px"},[el("div",null,[el("div",{fontWeight:"bold",fontSize:"14px",color:"#4a2e0a"},[fmtFecha(fecha)+(fecha===hoy()?" · Hoy":"")]),el("div",{fontSize:"11px",color:"#999"},[(d.manana?"✅":"⬜")+" M · "+(d.tarde?"✅":"⬜")+" T"])]),el("div",{fontWeight:"bold",fontSize:"14px",color:"#7a4f1e"},[total+" 🥚"])]));
+        var br=el("div",{display:"flex",gap:"8px",borderTop:"1px solid #f0e0c8",paddingTop:"10px"});
+        var turnos2=["manana","tarde"];
+        for(var ti=0;ti<2;ti++){(function(t){if(d[t]){var bloq=STATE.bloqueados&&STATE.bloqueados.recolectas&&!!STATE.bloqueados.recolectas[fecha+"_"+t];br.appendChild(btn("✏️ "+(t==="manana"?"Mañana":"Tarde")+(bloq?" 🔒":""),{flex:"1",padding:"8px",borderRadius:"10px",border:"2px solid #c17d3c",background:"#fffbf3",color:"#7a4f1e",fontSize:"12px",fontWeight:"bold"},function(){editando={tipo:"recolecta",fecha:fecha,turno:t};build();}));}})(turnos2[ti]);}
+        card.appendChild(br);w.appendChild(card);
+      })(fechas2[fi]);}
+    }
+
+    if(tab==="clasif"){
+      var fechas3=Object.keys(STATE.clasificaciones).sort().reverse();
+      if(!fechas3.length)w.appendChild(el("div",{textAlign:"center",color:"#bbb",padding:"40px 0"},["Sin clasificaciones."]));
+      for(var fi=0;fi<fechas3.length;fi++){(function(fecha){
+        var c=STATE.clasificaciones[fecha];var bloq=STATE.bloqueados&&STATE.bloqueados.clasificaciones&&!!STATE.bloqueados.clasificaciones[fecha];
+        var card=el("div",{background:"#fff",borderRadius:"15px",padding:"14px",marginBottom:"12px",border:"2px solid #f0e0c8"});
+        card.appendChild(el("div",{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:"10px"},[el("div",{fontWeight:"bold",fontSize:"14px",color:"#4a2e0a"},[fmtFecha(fecha)]),el("div",{fontWeight:"bold",fontSize:"14px",color:"#7a4f1e"},[tdia(fecha)+" 🥚"])]));
+        var cr=el("div",{display:"flex",gap:"6px",flexWrap:"wrap",marginBottom:"10px"});
+        for(var ci=0;ci<CATS.length;ci++){var cat=CATS[ci];var ct=typeof c[cat]==="object"?c[cat].total||0:c[cat]||0;if(ct>0)cr.appendChild(el("span",{background:CC[cat]+"18",color:CC[cat],borderRadius:"8px",padding:"3px 9px",fontSize:"12px",fontWeight:"bold"},[CE[cat]+cat+": "+ct]));}
+        card.appendChild(cr);
+        card.appendChild(btn("✏️ Editar Clasificación"+(bloq?" 🔒":""),{width:"100%",padding:"8px",borderRadius:"10px",border:"2px solid #c17d3c",background:"#fffbf3",color:"#7a4f1e",fontSize:"12px",fontWeight:"bold"},function(){editando={tipo:"clasificacion",fecha:fecha};build();}));
+        w.appendChild(card);
+      })(fechas3[fi]);}
+    }
+    cont.appendChild(w);
+  }
+  build();return null;
+}
+
+// ── PRODUCCIÓN ───────────────────────────────────────
+function vistaProduccion(){
+  var fechas=Object.keys(STATE.recolectas);
+  var totalG=0;for(var i=0;i<fechas.length;i++)totalG+=tdia(fechas[i]);
+  var totalS=0;for(var i=0;i<STATE.salidas.length;i++)totalS+=STATE.salidas[i].total;
+  var totalI=tinv();
+  var w=el("div",{padding:"20px 16px 90px"});
+  w.appendChild(el("h3",{color:"#7a4f1e",marginBottom:"16px",fontSize:"16px"},["📈 Producción General"]));
+  var grid=el("div",{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px",marginBottom:"18px"});
+  var items=[{l:"Total producido",v:totalG,e:"🥚",c:"#7a4f1e"},{l:"Días registrados",v:fechas.length,e:"📅",c:"#5a9e6f"},{l:"Total salidas",v:totalS,e:"🚚",c:"#e8a045"},{l:"En inventario",v:totalI,e:"📦",c:"#7b6fa0"}];
+  for(var i=0;i<items.length;i++){var it=items[i];
+    grid.appendChild(el("div",{background:"#fff",borderRadius:"14px",padding:"14px",border:"2px solid "+it.c+"22",textAlign:"center"},[el("div",{fontSize:"20px"},[it.e]),el("div",{fontSize:"20px",fontWeight:"bold",color:it.c},[it.v]),el("div",{fontSize:"11px",color:"#aaa",marginTop:"2px"},[it.l])]));
+  }
+  w.appendChild(grid);
+  w.appendChild(el("h4",{color:"#7a4f1e",marginBottom:"12px",fontSize:"14px"},["Últimas recolectas"]));
+  var fRecientes=Object.keys(STATE.recolectas).sort().reverse().slice(0,7);
+  for(var i=0;i<fRecientes.length;i++){var fecha=fRecientes[i];var total=tdia(fecha);var d=STATE.recolectas[fecha];
+    w.appendChild(el("div",{background:"#fff",borderRadius:"13px",padding:"12px",marginBottom:"10px",border:"1px solid #f0e0c8",display:"flex",justifyContent:"space-between",alignItems:"center"},[
+      el("div",null,[el("div",{fontWeight:"bold",fontSize:"13px",color:"#4a2e0a"},[fmtFecha(fecha)+(fecha===hoy()?" · Hoy":"")]),el("div",{fontSize:"11px",color:"#bbb"},[(d.manana?"✅":"⬜")+" M · "+(d.tarde?"✅":"⬜")+" T · "+(STATE.clasificaciones[fecha]?"✅ Clasif.":"⏳ Clasif.")])]),
+      el("div",{textAlign:"right"},[el("div",{fontWeight:"bold",fontSize:"14px",color:"#7a4f1e"},[total+" 🥚"]),el("div",{fontSize:"10px",color:"#aaa"},["≈"+Math.round(total/535*100)+"% efic."])])
+    ]));
+  }
+  return w;
+}
+
+// ── ARRANQUE ─────────────────────────────────────────
+// render() es llamado por el listener de Firebase al conectar
+</script>
+<div id="install-banner" style="display:none;position:fixed;bottom:80px;left:50%;transform:translateX(-50%);width:92%;max-width:440px;background:#7a4f1e;color:#fff;borderRadius:16px;padding:14px 16px;zIndex:100;boxShadow:0 4px 20px rgba(0,0,0,.3);display:flex;alignItems:center;gap:12px;font-family:Georgia,serif">
+  <span style="font-size:28px">🥚</span>
+  <div style="flex:1">
+    <div style="font-size:14px;font-weight:bold;margin-bottom:2px">Instalar Finca La Cristalina</div>
+    <div style="font-size:12px;opacity:.85">Toca "Compartir" → "Añadir a pantalla de inicio"</div>
+  </div>
+  <button onclick="document.getElementById('install-banner').style.display='none';localStorage.setItem('pwa_dismissed','1')" style="background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:8px;padding:6px 10px;font-size:12px;cursor:pointer">✕</button>
+</div>
+<script>
+// Mostrar banner de instalación si no está instalada y no fue descartada
+(function(){
+  var isStandalone=window.navigator.standalone||window.matchMedia('(display-mode: standalone)').matches;
+  var dismissed=localStorage.getItem('pwa_dismissed');
+  if(!isStandalone&&!dismissed){
+    setTimeout(function(){
+      var b=document.getElementById('install-banner');
+      if(b)b.style.display='flex';
+    },3000);
+  }
+})();
+</script>
+</body>
+</html>
