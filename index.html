@@ -80,7 +80,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(5,12,6,.92);
 .dish-icon{width:76px;height:76px;border-radius:10px;flex-shrink:0;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:28px;}
 .dish-info{flex:1;min-width:0;}
 .dish-name{font-family:"Josefin Sans",sans-serif;font-size:15px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:3px;}
-.dish-cat{display:none;}
+.dish-cat{font-size:10px;color:var(--gold2);letter-spacing:2px;margin-bottom:4px;text-transform:uppercase;}
 .dish-price{font-family:"Josefin Sans",sans-serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:3px;}
 .dish-price2{font-size:11px;color:rgba(200,168,75,.6);}
 .dish-desc{font-family:"Josefin Sans",sans-serif;font-size:12px;color:rgba(255,255,255,.82);line-height:1.5;margin-top:3px;font-weight:300;}
@@ -478,7 +478,6 @@ var _cn="", _ce="";
 function dishHTML(it){
   var img=(it.i&&IMG[it.i])?"<img class=\"dish-img\" src=\""+IMG[it.i]+"\" alt=\"\"/>":"<div class=\"dish-icon\">"+_ce+"</div>";
   var h="<div class=\"dish\">"+img+"<div class=\"dish-info\"><div class=\"dish-name\">"+it.n+"</div>";
-  h+="<div class=\"dish-cat\">"+_cn+"</div>";
   h+="<div class=\"dish-price\">"+it.p+"</div>";
   if(it.p2) h+="<div class=\"dish-price2\">"+it.p2+"</div>";
   if(it.d) h+="<div class=\"dish-desc\">"+it.d+"</div>";
