@@ -658,20 +658,37 @@ function exitAdmin(){document.getElementById("adminPanel").classList.remove("on"
 function cleanDishCat(){
   if(!confirm("¿Limpiar etiquetas de categoría en todos los platos de Firebase?")) return;
   var keys=Object.keys(MENU);
-  var promises=[];
+  var batch=db.batch();
   keys.forEach(function(k){
     var d=MENU[k];
-    var items=null;
-    if(d.items) items=d.items;
-    else if(d.secs){
-      items=[];
-      d.secs.forEach(function(s){ s.items.forEach(function(it){ items.push(it); }); });
+    var pay={nota:d.nota||""};
+    if(d.items){
+      var clean=d.items.map(function(it){
+        var o={n:it.n,p:it.p,dom:it.dom===true};
+        if(it.d) o.d=it.d;
+        if(it.p2) o.p2=it.p2;
+        if(it.i) o.i=it.i;
+        return o;
+      });
+      pay.items=clean;
+    } else if(d.secs){
+      pay.secs=d.secs.map(function(s){
+        return {l:s.l, items:s.items.map(function(it){
+          var o={n:it.n,p:it.p,dom:it.dom===true};
+          if(it.d) o.d=it.d;
+          if(it.p2) o.p2=it.p2;
+          if(it.i) o.i=it.i;
+          return o;
+        })};
+      });
     }
-    if(!items) return;
-    // Guardar de nuevo sin cambios (el JS ya no genera dish-cat, solo forzar re-save)
-    saveMenuCat(k);
+    batch.set(db.collection("menu").doc(k), pay);
   });
-  showToast("Listo — etiquetas eliminadas");
+  batch.commit().then(function(){
+    showToast("Listo — etiquetas eliminadas de Firebase");
+  }).catch(function(e){
+    showToast("Error: "+e.message);
+  });
 }
 
 function showAdmSub(sub){
